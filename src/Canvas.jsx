@@ -12,7 +12,7 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => (
     <CameraRig>
       <Backdrop />
       <Center>
-        <Shirt />
+        <Heel />
       </Center>
     </CameraRig>
   </Canvas>
@@ -47,17 +47,17 @@ function CameraRig({ children }) {
   return <group ref={group}>{children}</group>
 }
 
-function Shirt(props) {
+function Heel(props) {
   const snap = useSnapshot(state)
-  const texture = useTexture(`/${snap.decal}.png`)
-  const { nodes, materials } = useGLTF('/shirt_baked_collapsed.glb')
+  // const texture = useTexture(`/${snap.decal}.png`)
+  const { nodes, materials } = useGLTF('/shoes.glb')
   useFrame((state, delta) => easing.dampC(materials.lambert1.color, snap.color, 0.25, delta))
   return (
-    <mesh castShadow geometry={nodes.T_Shirt_male.geometry} material={materials.lambert1} material-roughness={1} {...props} dispose={null}>
+    <mesh castShadow  material={materials.lambert1} material-roughness={1} {...props} dispose={null}>
       <Decal position={[0, 0.04, 0.15]} rotation={[0, 0, 0]} scale={0.15} map={texture} />
     </mesh>
   )
 }
 
-useGLTF.preload('/shirt_baked_collapsed.glb')
-;['/react.png', '/three2.png', '/pmndrs.png'].forEach(useTexture.preload)
+useGLTF.preload('/shoes.glb');
+// ;['/react.png', '/three2.png', '/pmndrs.png'].forEach(useTexture.preload)

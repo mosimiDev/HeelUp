@@ -29,7 +29,7 @@ export function Overlay() {
                 initial={{ x: 100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ type: 'spring', damping: 5, stiffness: 40, restDelta: 0.001, duration: 0.3 }}>
-                <h1>LET'S DO IT.</h1>
+                <h1>Walk Taller.Be Unforgettable.</h1>
               </motion.div>
               <div className="support--content">
                 <motion.div
@@ -46,8 +46,8 @@ export function Overlay() {
                     delayChildren: 0.2
                   }}>
                   <p>
-                    Create your unique and exclusive shirt with our brand-new 3D customization tool. <strong>Unleash your imagination</strong> and define your
-                    own style.
+                  Each pair, handcrafted by artisans who bring their years of expertise to every stitch, creating shoes that are not only beautiful but durable. We use only premium leather and fine fabrics, so your heels will turn heads and stand the test of time.
+
                   </p>
                   <button style={{ background: snap.color }} onClick={() => (state.intro = false)}>
                     CUSTOMIZE IT <AiOutlineHighlight size="1.3em" />
